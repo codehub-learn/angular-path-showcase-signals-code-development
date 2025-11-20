@@ -1,0 +1,8 @@
+@for (product of productsSignal(); track product; let i = $index){
+  <div>
+    {{product.name}}<button (click)="deleteProduct(i)">Delete</button>
+  </div>
+}
+
+
+Total price: {{totalPrice()}}
