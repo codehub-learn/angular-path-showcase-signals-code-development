@@ -1,0 +1,14 @@
+<div class="container">
+  <div>
+    @if (item()) {
+      {{ item().title }} with id: {{ item().id }}
+    } @else {
+      No item selected...
+    }
+  </div>
+  <div>
+    @if (item() && !item().marked) {
+      <button (click)="markItem()">Mark</button>
+    }
+  </div>
+</div>

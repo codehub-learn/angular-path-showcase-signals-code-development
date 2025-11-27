@@ -1,0 +1,10 @@
+@for (todo of toDoStore.filteredTodos(); track todo) {
+  <div class="shopping-item">
+    <div [ngClass]="{'cut-through' : todo.done}">
+      {{ todo.description }}
+    </div>
+    <div>
+      <input [checked]="todo.done" (click)="toggleToDo(todo)" type="checkbox"/>
+    </div>
+  </div>
+}

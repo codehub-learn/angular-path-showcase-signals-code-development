@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="column-item">
+    <app-new-to-do-item-adder></app-new-to-do-item-adder>
+  </div>
+  <div class="column-item doneColumn">
+    <div class="filter-buttons">
+      <button (click)="toDoStore.changeFilter('all')" [ngClass]="{'active-filter': toDoStore.filter() === 'all'}">All
+      </button>
+      <button (click)="toDoStore.changeFilter('undone')" [ngClass]="{'active-filter': toDoStore.filter() === 'undone'}">
+        Not done
+      </button>
+      <button (click)="toDoStore.changeFilter('done')" [ngClass]="{'active-filter': toDoStore.filter() === 'done'}">
+        Done
+      </button>
+    </div>
+    <div>
+      {{ toDoStore.doneTodos().length }}/{{ toDoStore.todos().length }} done
+    </div>
+  </div>
+  <div class="column-item">
+    <app-to-do-list></app-to-do-list>
+  </div>
+</div>

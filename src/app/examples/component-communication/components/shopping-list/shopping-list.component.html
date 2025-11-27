@@ -1,0 +1,10 @@
+@for (item of shoppingList(); track item) {
+  <div class="shopping-item">
+    <div [ngClass]="{'cut-through' : item.bought}">
+      {{ item.title }}
+    </div>
+    <div>
+      <input [checked]="item.bought" type="checkbox" (click)="changeBuyStatus(item)"/>
+    </div>
+  </div>
+}

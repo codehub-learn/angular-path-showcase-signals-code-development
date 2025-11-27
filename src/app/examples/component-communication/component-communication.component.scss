@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.column-item {
+  border: 1px solid #c1bfbd;
+  width: 400px;
+}
+
+.doneColumn {
+  justify-content: end;
+  display: flex;
+}
+
+

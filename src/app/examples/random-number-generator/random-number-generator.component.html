@@ -1,0 +1,8 @@
+<pre>This example can be used as an exercise, since it reuses stuff shown in previous examples.</pre>
+<ul>
+  @for (randomNumber of randomNumbersArraySignal(); track randomNumber) {
+    <li>{{ randomNumber }}</li>
+  }
+</ul>
+<h3>Sum: {{ sumSignal() }}</h3>
+<button (click)="addRandomNumber()">Add random number</button>

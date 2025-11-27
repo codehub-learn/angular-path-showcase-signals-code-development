@@ -1,0 +1,10 @@
+<ul>
+  @for (product of productsSignal(); track product; let i = $index) {
+    <li>
+      {{ product.name }}: {{ product.price }} Euros ({{ product.quantity }})
+      <button (click)="deleteProduct(i)">Delete</button>
+    </li>
+  }
+</ul>
+
+<h3>Total Price: {{ totalPrice() }} Euros</h3>

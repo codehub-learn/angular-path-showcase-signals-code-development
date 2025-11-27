@@ -1,0 +1,4 @@
+<div style="padding: 15px">
+  <input [(ngModel)]="todoToAdd" style="width: 80%" type="text">
+  <button (click)="add()" [disabled]="!todoToAdd()">Add</button>
+</div>

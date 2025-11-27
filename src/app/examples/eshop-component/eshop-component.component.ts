@@ -1,12 +1,11 @@
 import {Component, computed, signal} from '@angular/core';
 
 @Component({
-  selector: 'app-eshop',
-  imports: [],
-  templateUrl: './eshop.html',
-  styleUrl: './eshop.css',
+  selector: 'app-eshop-component',
+  templateUrl: './eshop-component.component.html',
+  styleUrls: ['./eshop-component.component.scss']
 })
-export class Eshop {
+export class EshopComponentComponent {
   products = [
     {
       name: "Tomatoes",
@@ -33,22 +32,15 @@ export class Eshop {
       quantity: 1,
       price: 1.00
     }
-  ]
-  finalCost = 0;
+  ];
+
   productsSignal = signal(this.products);
   totalPrice = computed(() => {
-    console.log("computation run")
-    return this.productsSignal().reduce((current, next) => current + (next.quantity * next.price), 0)
+    return this.productsSignal().reduce((current, next) => current + (next.quantity * next.price), 0);
   });
 
-  constructor() {
-    // probably should be within an onChange function or (change)
-    let finalCost = this.products.reduce((current, next) => current + (next.quantity * next.price), 0);
-    console.log(finalCost);
-  }
-
   deleteProduct(index: number) {
-    // not the best example, update could be used instead of set
+    // probably not the best way, update would be better witout having to splice the original products array
     this.productsSignal.set(this.products.filter((product) => product !== this.products[index]));
     this.products.splice(index, 1);
   }

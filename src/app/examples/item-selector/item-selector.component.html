@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="column-item">
+    <app-items-list (itemSelected)="setSelectedItem($event)" [items]="items()"></app-items-list>
+  </div>
+  <div class="column-item">
+    <app-selected-item [(itemsList)]="items" [item]="selectedItem()"></app-selected-item>
+  </div>
+</div>

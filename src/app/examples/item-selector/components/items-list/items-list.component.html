@@ -1,0 +1,6 @@
+<ul>
+  @for (item of items(); track item) {
+    <li [ngClass]="{'marked-item': item.marked}" class="selectable-item" (click)="selectItem(item)">{{ item.title }}
+    </li>
+  }
+</ul>
